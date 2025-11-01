@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Circular Progress Bar</title>
+  <link rel="shortcut icon" href="https://png.pngtree.com/png-clipart/20210628/ourmid/pngtree-blue-gray-gradient-circular-progress-bar-page-waiting-icon-label-png-image_3448533.jpg" type="image/x-icon">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .shadow-neu {
+            box-shadow:
+            inset 4px 4px 6px -1px rgba(0,0,0,0.2),
+            inset -4px -4px 6px -1px rgba(255,255,255,0.7),
+            inset -0.5px -0.5px 0px rgba(255,255,255,1),
+            inset 0.5px 0.5px 0px rgba(0,0,0,0.15),
+            inset 0px 12px 10px -10px rgba(0,0,0,0.05);
+        }
+
+        @keyframes htmlAnim { 100% { stroke-dashoffset: 66; } } /*  85% */
+        @keyframes cssAnim  { 100% { stroke-dashoffset: 88; } } /*  80% */
+        @keyframes jsAnim   { 100% { stroke-dashoffset: 110; } } /* 75% */
+
+        #circle1 {
+            fill: none;
+            stroke: url(#GradientColor1);
+            stroke-width: 20px;
+            stroke-dasharray: 472;
+            stroke-dashoffset: 472;
+            animation: htmlAnim 2s linear forwards;
+        }
+        #circle2 {
+            fill: none;
+            stroke: url(#GradientColor2);
+            stroke-width: 20px;
+            stroke-dasharray: 472;
+            stroke-dashoffset: 472;
+            animation: cssAnim 2s linear forwards;
+        }
+        #circle3 {
+            fill: none;
+            stroke: url(#GradientColor3);
+            stroke-width: 20px;
+            stroke-dasharray: 472;
+            stroke-dashoffset: 472;
+            animation: jsAnim 2s linear forwards;
+        }
+        
+        
+
+    </style>
+
+</head>
+
+<body class="flex flex-col items-center min-h-screen justify-center bg-[#e3edf7]">
+
+    <section class="flex flex-row items-center space-x-10">
+
+        <div class="relative flex flex-col items-center space-y-4">
+            <p class="text-lg font-bold text-gray-500">HTML</p>
+
+            <svg class="absolute top-11 left-0" id="circle1" xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                <defs>
+                    <linearGradient id="GradientColor1">
+                    <stop offset="0%" stop-color="#f50909" />
+                    <stop offset="100%" stop-color="#00175B" />
+                    </linearGradient>
+                </defs>
+                <circle cx="80" cy="80" r="70" stroke-linecap="round" />
+            </svg>
+            <div class="outer w-[160px] h-[160px] animation-circle shadow-[6px_6px_10px_-1px_rgba(0,0,0,0.15),-6px_-6px_10px_-1px_rgba(255,255,255,0.7)] rounded-full p-5">
+                <div class="inner flex flex-row justify-center w-[120px] h-[120px] bg-[#e3edf7] rounded-full shadow-neu">
+                    <div class="number flex flex-col items-center justify-center text-gray-800 font-semibold">
+                        90%
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="relative flex flex-col items-center space-y-4">
+            <p class="text-lg font-bold text-gray-500">CSS</p>
+            
+            <svg class="absolute top-11 left-0" id="circle2" xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                <defs>
+                    <linearGradient id="GradientColor2">
+                    <stop offset="0%" stop-color="#03bdfb" />
+                    <stop offset="100%" stop-color="#000b2a" />
+                    </linearGradient>
+                </defs>
+                <circle cx="80" cy="80" r="70" stroke-linecap="round" />
+            </svg>
+            <div class="outer w-[160px] h-[160px] animation-circle shadow-[6px_6px_10px_-1px_rgba(0,0,0,0.15),-6px_-6px_10px_-1px_rgba(255,255,255,0.7)] rounded-full p-5">
+                <div class="inner flex flex-row justify-center w-[120px] h-[120px] bg-[#e3edf7] rounded-full shadow-neu">
+                    <div class="number flex flex-col items-center justify-center text-gray-800 font-semibold">
+                        80%
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="relative flex flex-col items-center space-y-4">
+            <p class="text-lg font-bold text-gray-500">JavaScript</p>
+
+            <svg class="absolute top-11 left-0" id="circle3" xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                <defs>
+                    <linearGradient id="GradientColor3">
+                    <stop offset="0%" stop-color="#e9d70d" />
+                    <stop offset="100%" stop-color="#011c6f" />
+                    </linearGradient>
+                </defs>
+                <circle cx="80" cy="80" r="70" stroke-linecap="round" />
+            </svg>
+            <div class="outer w-[160px] h-[160px] animation-circle shadow-[6px_6px_10px_-1px_rgba(0,0,0,0.15),-6px_-6px_10px_-1px_rgba(255,255,255,0.7)] rounded-full p-5">
+                <div class="inner flex flex-row justify-center w-[120px] h-[120px] bg-[#e3edf7] rounded-full shadow-neu">
+                    <div class="number flex flex-col items-center justify-center text-gray-800 font-semibold">
+                        75%
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    
+    <script src="app.js"></script>
+</body>
+</html>
